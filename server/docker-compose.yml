@@ -3,9 +3,9 @@ services:
     image: postgres:15-alpine
     container_name: api-monitoring-postgres
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: vipul
-      POSTGRES_DB: api_monitoring
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_INITDB_ARG: "--encoding=UTF-8 --locale=en_US.UTF-8"
     ports:
       - "5432:5432"
@@ -24,9 +24,9 @@ services:
     image: mongo:6.0
     container_name: api-monitoring-mongo
     environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: vipul
-      MONGO_INITDB_DATABASE: api_monitoring
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+      MONGO_INITDB_DATABASE: ${MONGO_INITDB_DATABASE}
     ports:
       - "27017:27017"
     volumes:
@@ -40,9 +40,9 @@ services:
     image: rabbitmq:3-management-alpine
     container_name: api-monitoring-rabbitmq
     environment:
-      RABBITMQ_DEFAULT_USER: api_user
-      RABBITMQ_DEFAULT_PASS: secure_password
-      RABBITMQ_DEFAULT_VHOST: api_monitoring
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
     ports:
       - "5672:5672" # AMQP port
       - "15672:15672" # Management UI port
