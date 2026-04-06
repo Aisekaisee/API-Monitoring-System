@@ -36,6 +36,16 @@ class SecurityUtils {
       errors.push("Password must contain at least one symbol.");
     }
 
+    // Check for common weak passwords (this is a very basic check, consider using a more comprehensive list)
+
+    const weakPasswords = [
+      "password", "123456", "12345678", "qwerty", "abc123","welcome", "letmein", "admin", "monkey", "login", "1234", "12345", "123456789","1234567", "password1", "123123", "iloveyou", "1q2w3e4r", "000000", "qwertyuiop", "asdfghjkl", "zxcvbnm", "123321", "password123", "1qaz2wsx", "qwerty123", "1q23qwe", "123qwe", "abc123456", "password!", "1234567890", "12345678", "123456789", "1234567", "1234567890", "123456789", "12345678", "1234567", "1234567890", "123456789", "12345678", "1234567", "1234567890", "123456789", "12345678", "1234567", "password1", "password!", "password123", "password2024", "1234567890", "12345678", "123456789", "1234567", "1234567890", "123456789", "12345678", "1234567", "1234567890", "123456789", "12345678", "1234567"
+    ];
+
+    if (weakPasswords.includes(password.toLowerCase())) {
+      errors.push("Password is too common and easily guessable.");
+    }
+
     return {
       success: errors.length === 0,
       errors,
