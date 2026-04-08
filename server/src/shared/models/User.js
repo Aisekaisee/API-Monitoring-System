@@ -2,6 +2,9 @@ import mongoose from "mongoose";
 import SecurityUtils from "../utils/SecurityUtils";
 import bcrypt from "bcryptjs";
 
+/**
+ * Mongoose schema and model for User, representing users in the system with fields for username, email, password, role, client association, active status, and permissions. Includes validation for username, email, and password, as well as pre-save middleware to hash passwords before saving to the database.
+ */
 const userSchema = new mongoose.Schema(
   {
     username: {
