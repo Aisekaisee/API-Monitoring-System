@@ -60,7 +60,7 @@ const apiHitSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-  },
+  }, 
   {
     timestamps: true,
     collection: "api_hits",
