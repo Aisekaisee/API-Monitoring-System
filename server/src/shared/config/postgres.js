@@ -6,7 +6,7 @@ import { log } from "winston";
 const { Pool } = pg;
 
 /**
- * This module defines a PostgresConnection class that manages the connection to a PostgreSQL database using the pg library. The class has methods to get a connection pool, test the connection, execute queries, and close the pool. The connection details (host, port, user, password, database) are retrieved from the configuration defined in the index.js file. The getPool method ensures that only one instance of the connection pool is created (singleton pattern), and it handles errors that may occur during query execution or when closing the pool. The testConnection method can be used to verify that the connection to PostgreSQL is working correctly by executing a simple query to retrieve the current server time.
+ * This module defines a PostgresConnection class that manages the connection to a PostgreSQL database using the pg library.
  *
  * Singleton Pattern: The PostgresConnection class is implemented as a singleton to ensure that only one instance of the connection pool exists throughout the application. This prevents multiple pools from being created, which can lead to resource exhaustion and performance issues.
  */

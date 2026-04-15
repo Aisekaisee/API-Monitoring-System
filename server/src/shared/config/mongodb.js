@@ -3,7 +3,7 @@ import config from "./index.js";
 import logger from "./logger.js";
 
 /**
- * This module defines a MongoDBConnection class that manages the connection to a MongoDB database using Mongoose. The class has methods to connect and disconnect from the database. The connection details (URI and database name) are retrieved from the configuration defined in the index.js file. The connectToMongoDB function is exported for use in other parts of the application to establish a connection to MongoDB when needed.
+ * This module defines a MongoDBConnection class that manages the connection to a MongoDB database using Mongoose.
  *
  * Singleton Pattern: The MongoDBConnection class is implemented as a singleton to ensure that only one instance of the connection exists throughout the application. This prevents multiple connections from being created, which can lead to resource exhaustion and performance issues.
  */
