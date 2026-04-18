@@ -1,7 +1,9 @@
 import pg from "pg";
 import config from "./index.js";
 import logger from "./logger.js";
-import { log } from "winston";
+import pkg from "winston";
+
+const { log } = pkg;
 
 const { Pool } = pg;
 

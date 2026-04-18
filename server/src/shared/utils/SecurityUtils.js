@@ -53,4 +53,4 @@ class SecurityUtils {
   }
 }
 
-module.exports = SecurityUtils;
+export default SecurityUtils;
